@@ -1,0 +1,66 @@
+.clients-widget {
+  height: 20vh;
+  width: 20vw;
+}
+
+.widget-header {
+  display: flex;
+  align-items: center;
+  position: relative;
+ }
+ 
+ .widget-icon {
+  position: absolute;
+  align-self: center; 
+  justify-content: center;
+  margin-left: 10px;  
+  animation: float 3s ease-in-out infinite;
+ }
+ 
+ @keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+ }
+ 
+ .widget-title {
+  margin: 0 auto;
+  color: #c69bff;
+ }
+ 
+ .clients-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+ }
+ 
+ .stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+ }
+ 
+ .widget-label {
+  color: #c69bff;
+  font-size: 0.9em;
+ }
+ 
+ .widget-value {
+  color: #ffff9b;
+  font-size: 1em;
+  line-height: 1;
+ }
+ 
+ .clients-actions {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+ }

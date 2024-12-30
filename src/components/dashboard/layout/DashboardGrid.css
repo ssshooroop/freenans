@@ -1,0 +1,116 @@
+/* DashboardGrid.css */
+.dashboard-grid {
+  top: 0;
+  width: 98%;
+  display: grid;
+  grid-template-areas: 
+    "user user clients orders invoices invoices"
+    "user user central central invoices invoices"
+    ". . central central . ."
+    ". . central central calculators calculators"
+    "stats stats central central specialty specialty"
+    "stats stats central central specialty specialty";
+  grid-template-columns: 20vw 5vw 1fr 1fr 5vw 20vw;
+  grid-template-rows: 20vh 5vh 1fr 1fr 5vh 20vh;
+  gap: 15px;
+  height: calc(100vh - 30px);
+  padding: 15px;
+  padding-bottom: 30px;
+  margin-bottom: 15px;
+  position: fixed;
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* Grid Areas */
+.grid-user {
+  grid-area: user;
+  align-self: flex-start;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+.grid-clients {
+  grid-area: clients;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  align-self: start;
+}
+
+.grid-orders {
+  grid-area: orders;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  align-self: start;
+}
+
+.grid-invoices {
+  grid-area: invoices;
+  width: 100%;
+  height: auto; /* Changed from 100% to auto */
+  min-width: fit-content;
+  min-height: fit-content;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4px; /* Added padding at the bottom */
+}
+
+.grid-central {
+  grid-area: central;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  min-width: 500px;
+  min-height: 500px;
+}
+
+.grid-calculators {
+  grid-area: calculators;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  align-self: start;
+}
+
+.grid-stats {
+  grid-area: stats;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  align-self: end;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+.grid-specialty {
+  grid-area: specialty;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  align-self: center;
+  padding-bottom: 15px;
+}
+
+/* Base Widget Styles */
+.widget {
+  background-color: #37104c;
+  border-radius: 30px;
+  padding: 8px;
+  color: #c69bff;
+  width: 100%;
+  height: 100%;
+  min-height: 100px;
+  box-sizing: border-box;
+}

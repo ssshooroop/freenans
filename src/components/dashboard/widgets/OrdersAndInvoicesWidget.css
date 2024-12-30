@@ -1,0 +1,58 @@
+/* Common styles for both widgets */
+.orders-widget,
+.invoices-widget {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  gap: 0;
+  height: content;
+}
+
+.widget-title {
+  margin: 0 auto;
+  color: #c69bff;
+}
+
+.orders-stats {
+  margin: 0;
+}
+
+ .stat-value {
+  font-size: 1em;
+  font-weight: 600;
+  color: #ffff9b;
+}
+
+.stat-value.highlight-success {
+  color: #9bffc6;
+}
+
+.stat-value.highlight-warning {
+  color: #ffc69b;
+}
+
+.widget-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.issue-button {
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(45deg, rgb(255, 255, 155), rgb(196, 141, 251), rgb(255, 255, 155));
+  color: #37104c;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0px 3px 3px rgba(155, 118, 166, 0.944));
+  align-self: right;
+  padding-bottom: 5px;
+}
+
+.issue-button:hover {
+  transform: scale(1.1)
+}

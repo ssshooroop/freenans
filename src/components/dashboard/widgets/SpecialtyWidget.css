@@ -1,0 +1,59 @@
+/* SpecialtyWidget.css */
+.specialty-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.specialty-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.specialty-header {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  gap: 5px;
+}
+
+.specialty-header h3 {
+  color: #c69bff;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+/* Стили для разных специальностей */
+.translator {
+  text-align: center; 
+  border-width: 3.15px;
+  border-color: rgb(255, 255, 155) !important;
+  border-radius: 30px;
+  border-style: dashed !important;
+  background-color: rgb(55, 16, 76);
+  position: relative;
+} 
+
+.supported-types {
+  color: #c69bff;
+  font-size: 0.7em;
+}
+
+/* Специфичные стили для каждой специальности */
+.developer .task-list {
+  border: 1px dashed #c69bff;
+  border-radius: 8px;
+  padding: 10px;
+  min-height: 100px;
+}
+
+.designer .time-tracker {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lawyer .document-templates {
+  display: grid;
+  gap: 8px;
+}

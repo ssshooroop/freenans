@@ -1,0 +1,151 @@
+.documents-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  perspective: 1000px;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(var(--rotation));
+    box-shadow: 
+      0 4px 8px rgba(0, 0, 0, 0.1),
+      0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: translateY(var(--float-distance)) rotate(calc(var(--rotation) + var(--rotate-add)));
+    box-shadow: 
+      0 8px 16px rgba(0, 0, 0, 0.12),
+      0 16px 32px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.document {
+  position: absolute;
+  width: 200px;
+  height: 280px;
+  background: white;
+  padding: 20px;
+  transition: transform 1s ease-out, box-shadow 1s ease-out;
+  cursor: pointer;
+  z-index: 0;
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.1),      /* Основная тень */
+    0 8px 16px rgba(0, 0, 0, 0.1),     /* Более размытая тень для глубины */
+    0 0 0 1px rgba(0, 0, 0, 0.05);     /* Тонкая граница */
+}
+
+/* При наведении можно сделать тень более выраженной */
+.document:hover {
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.1),
+    0 16px 32px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+/* Можно добавить разные тени для разных документов */
+.document-1 {
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    -2px 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.document-2 {
+  box-shadow: 
+    0 6px 12px rgba(0, 0, 0, 0.12),
+    -3px 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.document-3 {
+  box-shadow: 
+    0 5px 10px rgba(0, 0, 0, 0.1),
+    2px 7px 14px rgba(0, 0, 0, 0.08);
+}
+
+.document-4 {
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    3px 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.document-5 {
+  box-shadow: 
+    0 7px 14px rgba(0, 0, 0, 0.12),
+    -4px 9px 18px rgba(0, 0, 0, 0.08);
+}
+
+.document-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.document-content h3 {
+  color: rgb(196, 141, 251);
+  margin: 0 0 10px 0;
+  font-family: 'Corbel', sans-serif;
+}
+
+.document-content p {
+  color: rgb(196, 141, 251);
+  margin: 0;
+  font-family: 'Corbel', sans-serif;
+}
+
+/* Начальное положение документов */
+.document-1 {
+  top: 50%;
+  left: 0;
+  transform: rotate(-5deg);
+  z-index: 1;
+}
+
+.document-2 {
+  top: 40%;
+  left: 30px;
+  transform: rotate(15deg);
+  z-index: 2;
+}
+
+.document-3 {
+  top: 45%;
+  left: 250px;
+  transform: rotate(-20deg);
+  z-index: 1;
+}
+
+.document-4 {
+  top: 55%;
+  left: 280px;
+  transform: rotate(-7deg);
+  z-index: 2;
+}
+
+.document-5 {
+  top: 70%;
+  left: 120px;
+  transform: rotate(40deg);
+  z-index: 1;
+}
+
+/* Анимация при движении мыши */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(var(--rotation));
+  }
+  50% {
+    transform: translateY(var(--float-distance)) rotate(calc(var(--rotation) + var(--rotate-add)));
+  }
+}
+
+.documents-container:hover .document {
+  animation: float 5s ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+/* Индивидуальные параметры анимации для каждого документа */
+.document-1 { --rotation: -5deg; --float-distance: -10px; --rotate-add: 2deg; --delay: 0,5s; }
+.document-2 { --rotation: 15deg; --float-distance: -15px; --rotate-add: -3deg; --delay: 0.7s; }
+.document-3 { --rotation: -20deg; --float-distance: -12px; --rotate-add: 4deg; --delay: 1s; }
+.document-4 { --rotation: -7deg; --float-distance: -8px; --rotate-add: -2deg; --delay: 1.5s; }
+.document-5 { --rotation: 40deg; --float-distance: -20px; --rotate-add: 5deg; --delay: 3s; }

@@ -1,0 +1,6 @@
+:root {
+  --dashboard-bg-primary: #37104c;    /* Основной фиолетовый цвет */
+  --dashboard-text-primary: #c69bff;   /* Основной цвет текста */
+  --dashboard-accent-yellow: #ffff9b;  /* Акцентный желтый */
+  --dashboard-accent-purple: #c48dfb;  /* Акцентный светло-фиолетовый */
+}

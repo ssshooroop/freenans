@@ -1,0 +1,195 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #37104c;
+}
+
+.landing-page {
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  line-height: 1.6;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: visible;
+}
+
+.abstract-shape-container {
+  position: absolute;
+  top: 0%;
+  right: -20%;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.abstract-shape-container svg {
+  width: 100%;
+  height: 100%;
+  transform: scale(0.75);
+  transform-origin: top right;
+}
+
+.nav-signup:hover {
+  animation-play-state: paused;
+}
+
+main {
+  position: relative;
+  z-index: 2;
+  padding: 50px 0;
+  width: 100vw; /* Используем viewport width вместо процентов */
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: visible;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 20px;
+  position: relative;
+}
+
+.hero-documents {
+  flex: 1;
+  max-width: 50%;
+  position: relative;
+  height: 400px;
+  filter: color='#ffff9c' opacity='40%';
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap');
+
+.hero-content {
+  flex: 1;
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-family: 'Nunito', 'Arial Rounded MT Bold', 'Arial Black', Arial, sans-serif;
+  font-weight: 900;
+  color: rgb(196, 141, 251);
+  line-height: 1.2;
+  text-align: right;
+  font-size: 75px;
+  filter: drop-shadow(0px 2px 2px rgba(65, 26, 77, 0.944));
+  margin-bottom: 20px;
+}
+
+.hero-content h2 {
+  font-family: "Corbel", Arial, sans-serif;
+  color: rgb(196, 141, 251);
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: right;
+  font-size: 30px;
+  filter: drop-shadow(10px 10px 10px rgba(32, 10, 39, 0.944));
+  margin-right: 20px;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-family: "Corbel", Arial, sans-serif;
+  color: rgb(255, 255, 155);
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: right;
+  font-size: 30px;
+  filter: drop-shadow(0px 2px 2px rgba(65, 26, 77, 0.944));
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  font-family: "Corbel", Arial, sans-serif;
+  color: #c48dfb;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: center;
+  font-size: 18px;
+  padding: 15px 30px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 4px solid transparent;
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ffff9b, #aeff00, #facf7d, #fbf802, #b802fb);
+  background-size: 400% 400%;
+  z-index: -1;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.cta-button:hover::before {
+  animation-duration: 5s;
+}
+
+@media (max-width: 768px) {
+  .abstract-shape-container {
+    right: -50%;
+  }
+}
+  
+  .hero-content {
+    padding-left: 0;
+    align-items: center;
+  }
+
+  .hero-content h1,
+  .hero-content h2,
+  .hero-content p {
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content h2 {
+    font-size: 20px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+  
+  .hero-documents,
+  .hero-content {
+    max-width: 100%;
+    padding-left: 0;
+  }

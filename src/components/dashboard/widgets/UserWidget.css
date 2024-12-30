@@ -1,0 +1,56 @@
+.user-widget {
+  position: fixed;
+  max-height: 30vh;
+}
+
+.user-widget > * {
+  position: relative;
+  z-index: 3;
+}
+
+.user-widget-grid {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  gap: 5px;
+}
+
+.user-widget-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.userlogo-wrapper {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.userlogo-image {
+  width: 72px;
+  height: 83px;
+  object-fit: contain;
+}
+
+.user-name {
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.user-title {
+  composes: widget-title from '../commonStyles/widgets.css';
+}
+
+.user-button {
+  width: 100%;
+}
+
+.user-widget-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  width: 100%;
+}

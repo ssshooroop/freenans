@@ -1,0 +1,137 @@
+.widget {
+  position: relative;
+  background-color: #37104c;
+  border-radius: 30px;
+  padding: 15px;
+  max-width: 23vw;
+  isolation: isolate;
+  min-height: fit-content;
+  overflow: hidden;  /* Важно для маскировки внутреннего элемента */
+  margin-bottom: 15px;
+}
+
+.widget::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  padding: 1.5px; /* Толщина обводки */
+  background: linear-gradient(to bottom, #c48dfb, #37104c);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.widget > * {
+  position: relative;
+  z-index: 3;
+}
+
+/* Base Button */
+.widget-button {
+  position: relative;
+  background-color: #37104c;
+  border-radius: 0;
+  font-size: 0.9em;
+  color: #c48dfb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Button Gradient Border */
+.widget-button::before {
+  content: '';
+  position: absolute;
+  border-radius: 0;
+  inset: 0;
+  padding: 1.5px;
+  background: linear-gradient(to bottom, #c48dfb, #37104c);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.widget-button > * {
+  position: relative;
+  z-index: 1;
+}
+
+.widget-button:hover {
+  background-color: #421661;
+}
+
+.widget-button svg {
+  color: #ffff9b;
+  width: 20px;
+  height: 20px;
+}
+
+/* Common Text Styles */
+.widget-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0 auto;
+}
+
+.widget-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0;
+}
+
+.widget-table td {
+  padding: 2px 4px;
+}
+
+.widget-table td:nth-child(odd) {
+  text-align: right;
+  padding-right: 2px;
+}
+
+.widget-table td:nth-child(even) {
+  text-align: left;
+  padding-right: 2px;
+}
+
+/* При необходимости - стили для строки с colSpan */
+.widget-table td[colspan] {
+  text-align: left;
+  width: auto;
+}
+
+.widget-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #c69bff;
+}
+
+.widget-value {
+  font-size: 1em;
+  font-weight: 400;
+  color: #ffff9b;
+}
+
+.widget-label {
+  font-size: 0.9em;
+  color: #c69bff;
+}
